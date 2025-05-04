@@ -461,6 +461,7 @@ console.log(counter.count); // undefined
 
 // Currying is a technique in functional programming where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument. This allows for partial application of functions and can lead to more reusable and composable code.
 
+/*
 function add(a) {
     return function(b) {
         return function(c) {
@@ -493,3 +494,7 @@ const sum = (a) => {
 }
 
 console.log(sum(1)(2)(3)(4)()); // 10
+
+*/
+
+
