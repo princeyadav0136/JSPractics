@@ -457,5 +457,39 @@ console.log(counter.count); // undefined
 
 */
 
+// Currying
+
+// Currying is a technique in functional programming where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument. This allows for partial application of functions and can lead to more reusable and composable code.
+
+function add(a) {
+    return function(b) {
+        return function(c) {
+            return a + b + c;
+        }
+    }
+}
+
+console.log(add(1)(2)(3)); // 6
+
+// WHy should we use currying?
+
+// 1. Reusability: Currying allows you to create more reusable functions by breaking down a function into smaller, more focused functions.
+// 2. Partial application: Currying allows you to create functions with fewer arguments by partially applying some of the arguments.
+// 3. Function composition: Currying allows you to compose functions together more easily by creating smaller functions that can be combined to create more complex functions.
+// 4. Improved readability: Currying can make your code more readable by breaking down complex functions into smaller, more focused functions.
+// 5. Improved testability: Currying can make your code more testable by allowing you to test smaller, more focused functions.
 
 
+// Infinite Currying
+
+const sum = (a) => {
+    return function(b) {
+        if (b) {
+            return sum(a + b);
+        } else {
+            return a;
+        }
+    }
+}
+
+console.log(sum(1)(2)(3)(4)()); // 10
